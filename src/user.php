@@ -17,7 +17,7 @@ $query->execute();
 $user = $query->fetch();
 
 // On vérifie si l'utilisateur existe // 
-
+ 
 if(!$user){
     header("Location: index.php");
 } else {
@@ -40,8 +40,7 @@ if(!$user){
     <title>Recherche de stage</title>
 </head>
 <body>
-    <h1>Recherche de Stage <?= $user["id"] ?></h1>
-    <p>id : <?= $user["id"] ?></p>
+    <h1>Recherche de Stage</h1>
     <p>Statut de la recherche : <?= $user["statut_recherche"] ?></p>
     <p>Nom de l'entreprise : <?= $user["nom_entreprise"] ?></p>
     <p>Date de postulation : <?= $user["date_postuler"] ?></p>
@@ -53,4 +52,6 @@ if(!$user){
     <p>Adresse mail de contact : <?= $user["mail_contact"] ?></p>
     <p>Commentaires : <?= $user["commentaires"] ?></p>
     <p><a href="index.php">Retour</a><br><a href="update.php?id=<?= $user["id"] ?>">Modifier</a><br><a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a></p>
+
+</body>
 </html>

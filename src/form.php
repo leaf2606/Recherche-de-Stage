@@ -62,8 +62,8 @@
             <option>Freelance</option>
         </select><br><br>
         
-        <label for="mail_contact">Adresse-mail de contact</label>
-        <input type="e-mail" id="mail_contact" name="mail_contact" required><br><br>
+        <label for="mail">Adresse mail de contact</label>
+        <input type="email" id="mail" name="mail_contact"><br><br>
         
         <label for="commentaires">Commentaires:</label>
         <textarea name="commentaires" id="commentaires"></textarea><br><br>

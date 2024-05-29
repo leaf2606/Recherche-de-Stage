@@ -53,13 +53,13 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
     
     <tbody>
         <?php
-           
+           $counter = 1; 
            foreach($users as $user){
 
         ?>
 
             <tr>
-                <td><?= $user["id"]?></td>
+                <td><?= $counter++ ?></td>
                 <td><?= $user["statut_recherche"]?></td>
                 <td><?= $user["nom_entreprise"]?></td>
                 <td><?= $user["date_postuler"]?></td>
@@ -80,6 +80,8 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
            }
         ?>
            <a href="form.php"><button>Ajoutez une entreprise</button></a>
+           <a href="compte.php">Compte</a>
+           <a href="index.php">Déconnexion</a>
 
     </tbody>
     </table>

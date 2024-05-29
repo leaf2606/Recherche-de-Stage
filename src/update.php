@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if($_POST) {
     if(
         isset($_POST["id"]) && !empty($_POST["id"])
@@ -51,6 +53,10 @@ if($_POST) {
 
         $query->execute();
         header("Location: index.php"); 
+
+        session_start();
+        $_SESSION['message'] = "Modification réussie";
+        header("Location: index.php");
 
     } else {
         echo "Remplissez le formulaire !";
@@ -120,8 +126,9 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
         <label>Date de postulation <code></code></label>
         <input type="date" name="date_postuler" required><br><br>
         
-        <label>Date de relance <code></code></label>
-        <input type="date" name="date_relance" required><br><br>
+        <label for="date_relance">Date de relance :</label>
+        <input type="date" id="date_relance" name="date_relance" required>
+        <input type="checkbox" id="ajouter_jours" onchange="miseAJour()"> +7 jours<br><br>
         
         <label id="type_postulation">Type de postulation:</label>
         <select name="type_postulation" id="type_postulation" value="<?= $user["type_postulation"] ?>" required>
@@ -154,8 +161,8 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
             <option>Freelance</option>
         </select><br><br>
         
-        <label for="mail_contact">Adresse-mail de contact</label>
-        <input type="e-mail" id="mail_contact" name="mail_contact" required><br><br>
+        <label for="mail">Adresse mail de contact</label>
+        <input type="email" id="mail" name="mail_contact"><br><br>
         
         <label for="commentaires">Commentaires:</label>
         <textarea name="commentaires" id="commentaires"></textarea><br><br>

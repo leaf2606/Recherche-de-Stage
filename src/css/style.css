@@ -38,3 +38,12 @@ button:hover{
     cursor: pointer;
     opacity: 0.9;
 }
+
+a {
+    margin: 10%;
+}
+
+section-7 h1 {
+    color: red;
+    border: solid 3px red;
+}
