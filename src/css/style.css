@@ -1,0 +1,40 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
+    color: gray;  
+}
+
+h1 {
+    color:blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table {
+    border-collapse: collapse; 
+    text-align: center;
+  }
+  
+th, td {
+    padding: 10px; 
+    border: solid 3px black;
+}
+   
+tr {
+    margin-bottom: 10px;   
+}
+
+button{
+    font-family: poppins, bold, sans-serif;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 15px; 
+    width: fit-content;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+}
+
+button:hover{
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+}
