@@ -12,10 +12,6 @@ $query->execute();
 // On récuper les donnés sous forme de tableau associatif //
 $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// echo "<pre>";
-// print_r($users);
-// echo "</pre>";
-
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +23,15 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
     <title>Atelier-stage</title>
 </head>
 <body>
+
+<nav>
+        <ul class="navigation">
+            <li><a href="index.php">Accueil</a></li>
+            <li><a href="login.php">Connexion</a></li>
+            <li><a href="register.php">Inscription</a></li>
+        </ul>
+    </nav>
+
     <h1>Recherche de stage</h1>
 
     <?php 
@@ -79,10 +84,9 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php
            }
         ?>
+            <div id="ajoutez">
            <a href="form.php"><button>Ajoutez une entreprise</button></a>
-           <a href="compte.php">Compte</a>
-           <a href="index.php">Déconnexion</a>
-
+           </div>
     </tbody>
     </table>
 </body>

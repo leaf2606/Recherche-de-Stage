@@ -40,6 +40,8 @@ if(!$user){
     <title>Recherche de stage</title>
 </head>
 <body>
+    <section id="section-user">
+    
     <h1>Recherche de Stage</h1>
     <p>Statut de la recherche : <?= $user["statut_recherche"] ?></p>
     <p>Nom de l'entreprise : <?= $user["nom_entreprise"] ?></p>
@@ -52,6 +54,7 @@ if(!$user){
     <p>Adresse mail de contact : <?= $user["mail_contact"] ?></p>
     <p>Commentaires : <?= $user["commentaires"] ?></p>
     <p><a href="index.php">Retour</a><br><a href="update.php?id=<?= $user["id"] ?>">Modifier</a><br><a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a></p>
-
+    
+    </section>
 </body>
 </html>
