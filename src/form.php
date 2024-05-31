@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Formulaire</title>
+    
 </head>
 <body>
     <h1>Ajoutez une entreprise</h1>

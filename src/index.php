@@ -24,11 +24,15 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 
-<nav>
+    <nav>
         <ul class="navigation">
-            <li><a href="index.php">Accueil</a></li>
-            <li><a href="login.php">Connexion</a></li>
-            <li><a href="register.php">Inscription</a></li>
+                <li><a href="register.php">Inscription</a></li>
+                <li>Accueil</li>
+            <?php if(!isset($_SESSION["mdp"])): ?>
+                <li><a href="login.php">Connexion</a></li>
+            <?php else: ?>
+                <li><a href="logout.php">Deconnexion</a></li>
+            <?php endif; ?>
         </ul>
     </nav>
 
@@ -84,7 +88,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php
            }
         ?>
-            <div id="ajoutez">
+            <div class="ajoutez">
            <a href="form.php"><button>Ajoutez une entreprise</button></a>
            </div>
     </tbody>

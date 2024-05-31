@@ -1,39 +1,57 @@
 <?php
+
 session_start();
 
-require_once("connect.php");
-
-if(isset($_POST["login"])) {
-    $email = $_POST["mail_contact"];
-    $password = $_POST["password"];
-
-    $sql = "SELECT * FROM utilisateurs WHERE email = :email";
-    $query = $db->prepare($sql);
-    $query->execute(array(":email" => $email));
-    $user = $query->fetch(PDO::FETCH_ASSOC);
-
-    if($user) {
-        // Vérification du mot de passe
-        if(password_verify($password, $user["password"])) {
-            // Connexion réussie
-            $_SESSION["user_id"] = $user["id"];
-            $_SESSION["email"] = $user["email"];
-            // Redirection vers une page sécurisée par exemple
-            header("Location: dashboard.php");
-            exit();
-        } else {
-            // Mot de passe incorrect
-            $_SESSION["message"] = "Mot de passe incorrect";
-            header("Location: login.php");
-            exit();
-        }
-    } else {
-        // Utilisateur non trouvé
-        $_SESSION["message"] = "Utilisateur non trouvé";
-        header("Location: login.php");
-        exit();
-    }
+if(isset($_SESSION["mdp"])){
+    header("Location: profil.php");
+    exit;
 }
+
+
+if(!empty($_POST)){
+        if(isset($_POST["email"], $_POST["password"])
+            && !empty($_POST["email"] && !empty($_POST["password"]))
+        ){
+            if(!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
+                die("Ce n'est pas un email");
+            }
+
+            require_once("connect.php");
+
+            $sql = "SELECT * FROM `mdp` WHERE `email` = :email";
+
+            $query = $db->prepare($sql);
+
+            $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+
+            $query->execute();
+
+            $mdp = $query->fetch();
+
+            // var_dump($mdp);die;
+
+            //Problème ici sois il va sur le profil sois il y a un message d'erreur //
+
+            if(!$mdp){
+                die("L'utilisateur et/ou le mot de passe est incorrect");
+            }
+        
+            if(!password_verify($_POST["password"], $mdp["password"]));
+                // die("L'utilisateur et/ou le mot de passe est incorrect");
+        }
+
+        // var_dump($_SESSION);
+        $_SESSION["mdp"] = [
+            "id" => $mdp["id"],
+            "username" => $mdp["username"],
+            "email" => $mdp["email"],
+            "roles" => $mdp["roles"]
+        ];
+
+        // var_dump($_SESSION);
+        header("Location: profil.php");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,27 +59,27 @@ if(isset($_POST["login"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Inscription</title>
 </head>
 <body>
-    <h1>Connectez vous à votre compte</h1>
+    <section id="section-login">
+    <h1>Connectez-vous à votre compte</h1>
 
-    <form action="index.php" method="post">
-        
-        <label for="username">Nom d'utilisateur</label>
-        <input type="text" placeholder="Saisir un nom d'utilisateur" id="username" name="utilisateur" required><br><br>
+    <form  method="post">
 
-        <label for="mail_contact">E-mail</label>
-        <input type="email" placeholder="Entrez votre e-mail" id="mail_contact" name="mail_contact" required><br><br>
+        <label for="email">E-mail</label>
+        <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>
 
         <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password" required>
-        <input type="submit" value="Se connecter" name="login">
+        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password">&ensp;&ensp;
+        <button>Se connecter</button>
     </form>
-
+    </section>
+    <div class="lien-login">
         <a href="index.php">Retour</a>
-        <a href="index.php">Déconnexion</a>
-
+    </div>
 </body>
 </html>
 

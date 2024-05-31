@@ -1,8 +1,18 @@
 <?php
+
 session_start();
-session_unset();
-session_destroy();
+
+//Problème ici le logout revient sur le profil //
+
+// if(isset($_SESSION["mdp"])){
+//     header("Location: login.php");
+//     exit;
+// }
+
+
+unset($_SESSION["mdp"]);
+
 header("Location: index.php");
-exit();
+
 ?>
 
