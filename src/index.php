@@ -12,6 +12,13 @@ $query->execute();
 // On récuper les donnés sous forme de tableau associatif //
 $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
+function checkRelanceDate($date_relance) {
+    $current_date = new DateTime();
+    $relance_date = new DateTime($date_relance);
+    $interval = $current_date->diff($relance_date);
+    return $interval->days > 7 && $current_date > $relance_date;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +34,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
     <nav>
         <ul class="navigation">
                 <li><a href="register.php">Inscription</a></li>
-                <li>Accueil</li>
+                <li><a href="index.php">Accueil</a></li>
             <?php if(!isset($_SESSION["mdp"])): ?>
                 <li><a href="login.php">Connexion</a></li>
             <?php else: ?>
@@ -62,12 +69,12 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
     
     <tbody>
         <?php
-           $counter = 1; 
-           foreach($users as $user){
-
+            $counter = 1; 
+            foreach($users as $user) {
+                $isRelanceDue = checkRelanceDate($user["date_relance"]);
         ?>
 
-            <tr>
+            <tr <?php if($isRelanceDue) echo 'style="background-color: #F5DEB3;"'; ?>>
                 <td><?= $counter++ ?></td>
                 <td><?= $user["statut_recherche"]?></td>
                 <td><?= $user["nom_entreprise"]?></td>

@@ -68,25 +68,27 @@ if(!empty($_POST)){
     <title>Inscription</title>
 </head>
 <body>
-
+    <div class="titre">
+        <h1>Créér un compte</h1>
+    </div>
+    <div class="container-register">
     <section id="section-register">
-    <h1>Créér un compte</h1>
-
     <form  method="post">
 
         <label for="username">Pseudo</label>
-        <input type="text" placeholder="Saisir un nom d'utilisateur" id="username" name="username"><br><br>
+        <input type="text" placeholder="Saisir un nom d'utilisateur" id="username" name="username" required><br><br>
         
         <label for="email">E-mail</label>
         <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>
 
         <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password">&ensp;&ensp;
+        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password" required>&ensp;&ensp;
         <button>Se connecter</button>
     </form>
     </section>
     <div class="lien">
         <a href="index.php">Retour</a>
+    </div>
     </div>
 </body>
 </html>

@@ -64,6 +64,7 @@ if(!empty($_POST)){
     <title>Inscription</title>
 </head>
 <body>
+    <div class="container-login">
     <section id="section-login">
     <h1>Connectez-vous à votre compte</h1>
 
@@ -73,12 +74,13 @@ if(!empty($_POST)){
         <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>
 
         <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password">&ensp;&ensp;
+        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password" required>&ensp;&ensp;
         <button>Se connecter</button>
     </form>
     </section>
     <div class="lien-login">
         <a href="index.php">Retour</a>
+    </div>
     </div>
 </body>
 </html>
