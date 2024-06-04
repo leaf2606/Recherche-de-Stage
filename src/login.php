@@ -44,12 +44,12 @@ if(!empty($_POST)){
         $_SESSION["mdp"] = [
             "id" => $mdp["id"],
             "username" => $mdp["username"],
-            "email" => $mdp["email"],
-            "roles" => $mdp["roles"]
+            "email" => $mdp["email"]
         ];
 
         // var_dump($_SESSION);
         header("Location: profil.php");
+        exit;
 }
 
 ?>

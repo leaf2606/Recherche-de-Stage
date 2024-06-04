@@ -30,10 +30,10 @@ if(!empty($_POST)){
 
         require_once("connect.php");
 
-        $sql = "INSERT INTO `mdp` (`username`, `email`, `password`, `roles`) VALUES (:username, :email, '$password', '[\"ROLE_MDP\"]')";
+        $sql = "INSERT INTO `mdp` (`username`, `email`, `password`) VALUES (:username, :email, '$password')";
 
         $query = $db->prepare($sql);
-
+        
         $query->bindValue(":username", $username, PDO::PARAM_STR);
         $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
 
@@ -45,8 +45,7 @@ if(!empty($_POST)){
         $_SESSION["mdp"] = [
             "id" => $id,
             "username" => $username,
-            "email" => $_POST["email"],
-            "roles" => ["ROLE_USER"]
+            "email" => $_POST["email"]
         ];
 
         // var_dump($_SESSION);
@@ -68,15 +67,15 @@ if(!empty($_POST)){
     <title>Inscription</title>
 </head>
 <body>
-    <div class="titre">
-        <h1>Créér un compte</h1>
-    </div>
     <div class="container-register">
     <section id="section-register">
+    <div class="titre-1">
+        <h1>Créér un compte</h1>
+    </div>
     <form  method="post">
 
         <label for="username">Pseudo</label>
-        <input type="text" placeholder="Saisir un nom d'utilisateur" id="username" name="username" required><br><br>
+        <input type="text" placeholder="Saisir votre pseudo" id="username" name="username" required><br><br>
         
         <label for="email">E-mail</label>
         <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>

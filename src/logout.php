@@ -9,7 +9,6 @@ session_start();
 //     exit;
 // }
 
-
 unset($_SESSION["mdp"]);
 
 header("Location: index.php");
