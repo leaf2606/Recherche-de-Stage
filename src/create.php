@@ -3,7 +3,8 @@
 session_start();
 
 if(
-    isset($_POST["statut_recherche"]) && !empty($_POST["statut_recherche"])
+    isset($_POST["user_id"]) && !empty($_POST["user_id"])
+    && isset($_POST["statut_recherche"]) && !empty($_POST["statut_recherche"])
     && isset($_POST["nom_entreprise"]) && !empty($_POST["nom_entreprise"])
     && isset($_POST["date_postuler"]) && !empty($_POST["date_postuler"])
     && isset($_POST["date_relance"]) && !empty($_POST["date_relance"])
@@ -17,6 +18,7 @@ if(
 ){
     require_once("connect.php");
 
+    $user_id = strip_tags($_POST["user_id"]);
     $statut_recherche = strip_tags($_POST["statut_recherche"]);
     $nom_entreprise = strip_tags($_POST["nom_entreprise"]);
     $date_postuler = strip_tags($_POST["date_postuler"]);
@@ -28,10 +30,11 @@ if(
     $mail_contact = strip_tags($_POST["mail_contact"]);
     $commentaires = strip_tags($_POST["commentaires"]);
 
-    $sql = "INSERT INTO users (statut_recherche, nom_entreprise, date_postuler, date_relance, type_postulation, methode_postulation, intitule_poste, type_contrat, mail_contact, commentaires) 
-    VALUES (:statut_recherche, :nom_entreprise, :date_postuler, :date_relance, :type_postulation, :methode_postulation, :intitule_poste, :type_contrat, :mail_contact, :commentaires)";
+    $sql = "INSERT INTO users (user_id, statut_recherche, nom_entreprise, date_postuler, date_relance, type_postulation, methode_postulation, intitule_poste, type_contrat, mail_contact, commentaires) 
+    VALUES (:user_id, :statut_recherche, :nom_entreprise, :date_postuler, :date_relance, :type_postulation, :methode_postulation, :intitule_poste, :type_contrat, :mail_contact, :commentaires)";
 
     $query = $db->prepare($sql);
+    $query->bindValue(":user_id", $user_id, PDO::PARAM_INT);
     $query->bindValue(":statut_recherche", $statut_recherche);
     $query->bindValue(":nom_entreprise", $nom_entreprise);
     $query->bindValue(":date_postuler", $date_postuler);

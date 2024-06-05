@@ -2,10 +2,10 @@
 
 session_start();
 
-if(isset($_SESSION["mdp"])){
-    header("Location: profil.php");
-    exit;
-}
+// if(isset($_SESSION["mdp"])){
+//     header("Location: profil.php");
+//     exit;
+// }
 
 
 if(!empty($_POST)){
@@ -47,6 +47,8 @@ if(!empty($_POST)){
             "email" => $mdp["email"]
         ];
 
+        $_SESSION["user_id"] = $mdp["id"];
+
         // var_dump($_SESSION);
         header("Location: profil.php");
         exit;
@@ -79,7 +81,8 @@ if(!empty($_POST)){
     </form>
     </section>
     <div class="lien-login">
-        <a href="index.php">Retour</a>
+        <!-- <a href="index.php">Retour</a> -->
+        <a href="register.php">Inscrivez-vous ici</a>
     </div>
     </div>
 </body>

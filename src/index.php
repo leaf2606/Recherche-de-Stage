@@ -1,12 +1,20 @@
 <?php
 session_start();
+if(empty($_SESSION["user_id"])){
+    header("Location: login.php");
+}
+
+$user_id = $_SESSION["user_id"];
+// echo $_SESSION["user_id"];
 
 require_once("connect.php");
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users WHERE user_id=:user_id";
 
 // On prépare la requête // 
 $query = $db->prepare($sql);
+
+$query->bindValue(":user_id", $user_id, PDO::PARAM_INT);
 // On execute la requête //
 $query->execute();
 // On récuper les donnés sous forme de tableau associatif //
@@ -35,10 +43,10 @@ function checkRelanceDate($date_relance) {
         <ul class="navigation">
                 <li><a href="register.php">Inscription</a></li>
                 <li><a href="index.php">Accueil</a></li>
-            <?php if(!isset($_SESSION["mdp"])): ?>
+            <?php if(!isset($_SESSION["user_id"])): ?>
                 <li><a href="login.php">Connexion</a></li>
             <?php else: ?>
-                <li><a href="logout.php">Deconnexion</a></li>
+                <li><a href="disconnect.php">Deconnexion</a></li>
             <?php endif; ?>
         </ul>
     </nav>
