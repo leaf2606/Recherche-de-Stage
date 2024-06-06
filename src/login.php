@@ -2,12 +2,6 @@
 
 session_start();
 
-// if(isset($_SESSION["mdp"])){
-//     header("Location: profil.php");
-//     exit;
-// }
-
-
 if(!empty($_POST)){
         if(isset($_POST["email"], $_POST["password"])
             && !empty($_POST["email"] && !empty($_POST["password"]))
@@ -28,16 +22,14 @@ if(!empty($_POST)){
 
             $mdp = $query->fetch();
 
-            // var_dump($mdp);die;
-
-            //Problème ici sois il va sur le profil sois il y a un message d'erreur //
-
-            if(!$mdp){
+            if (!$mdp) { 
                 die("L'utilisateur et/ou le mot de passe est incorrect");
             }
         
-            if(!password_verify($_POST["password"], $mdp["password"]));
-                // die("L'utilisateur et/ou le mot de passe est incorrect");
+            if (!password_verify($_POST["password"], $mdp["password"])){
+                die("L'utilisateur et/ou le mot de passe est incorrect");
+            }
+                
         }
 
         // var_dump($_SESSION);

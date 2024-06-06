@@ -1,35 +1,33 @@
 <?php
-
-if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
+session_start();
 
 require_once("connect.php");
 
-    // echo $_GET["id"];
-$id = strip_tags($_GET["id"]);
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
 
-$sql = "SELECT * FROM users WHERE id = :id";
+if(isset($_GET["id"]) && !empty($_GET["id"])) {
+    $id = strip_tags($_GET["id"]);
 
-$query = $db->prepare($sql); 
-// On accroche la valeur id de la requête à celle de la variable $id //
+    $sql = "SELECT * FROM users WHERE id = :id";
 
-$query->bindValue(":id", $id, PDO::PARAM_INT);
-$query->execute();
-$user = $query->fetch();
+    $query = $db->prepare($sql); 
 
-// On vérifie si l'utilisateur existe // 
- 
-if(!$user){
-    header("Location: index.php");
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    $user = $query->fetch(PDO::FETCH_ASSOC);
+
+    if(!$user){
+        header("Location: index.php");
+        exit();
+    }
+
 } else {
-    require_once("disconnect.php");
-}
-
-// print_r($user);
-
-} else{
     header("Location: index.php");
+    exit();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -58,12 +56,6 @@ if(!$user){
     <div class="retour">
         <p><a href="index.php">Retour</a><br>
     </div>
-    <div class="modifier">
-        <a href="update.php?id=<?= $user["id"] ?>">Modifier</a><br>
-    </div>
-    <div class="supprimer">
-        <a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a></p>
-    </div>
-    </section>
+
 </body>
 </html>

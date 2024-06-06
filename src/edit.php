@@ -1,22 +1,36 @@
 <?php
- 
-session_start();
+// session_start();
+
+// // if (!isset($_SESSION['id'])) {
+// //     header("Location: login.php");
+// //     exit();
+// // }
+
+if(isset($_GET["id"]) && !empty($_GET["id"])) {
+
+    require_once("connect.php");
+
+    $id = strip_tags($_GET["id"]);
+
+    $sql = "SELECT * FROM users WHERE id = :id";
+    $query = $db->prepare($sql); 
+    $query->bindValue(":id", $id, PDO::PARAM_INT);
+    $query->execute();
+    $user = $query->fetch();
+
+    if(!$user){
+        header("Location: index.php");
+    } else {
+    
+    }
+} else {
+    header("Location: index.php");
+}
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Formulaire</title>
-    
-</head>
-<body>
-
-<form action="create.php" method="post">
-<h1>Ajoutez une entreprise</h1>
+<form action="edit.php?id" method="post">
+<h1>Modifier la recherche</h1>
 
     <label id="statut_recherche">Statut de la recherche : </label>
     <select name="statut_recherche" id="statut_recherche" placeholder="Recherche de stage" value="<?= $user["statut_recherche"] ?>" required>
@@ -78,9 +92,7 @@ session_start();
 
         <button>Ajouter</button>
 
-    <input type="hidden" name="user_id" value="<?= $_SESSION["user_id"]?>">
         <a href="index.php" class="button">Retour</a>
 
     </form>
 </body>
-</html>
