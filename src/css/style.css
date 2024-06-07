@@ -16,6 +16,14 @@ h1 {
     margin-right: 70%;
 }
 
+.modifier {
+    margin-right: 98%;
+}
+
+.supprimer {
+    margin-right: 98%;
+}
+
 table {
     border-collapse: collapse; 
     text-align: center;
@@ -99,25 +107,54 @@ table tbody tr:hover {
 
 /* User */
 
-#section-user { 
+.container-user {
+    background-color: wheat;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin-left: 34%;
+}
+
+.container-user p {
+    font-size: 20px;
     color: black;
 }
 
-#section-user h1{
-    text-align: center;
+.container-user h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
 }
 
-.retour {
-    margin-left: 30%;
+.container-user button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-.modifier {
-    margin-right: 98%;
+.container-user button:hover {
+    background-color: gray;
 }
 
-.supprimer {
-    margin-right: 98%;
+.container-user a {
+    margin-left: 60%;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
 }
+
+.container-user a:hover {
+    color: #0056b3;
+} 
 
 /* Nav Index */
 
@@ -173,8 +210,8 @@ header {
 
 /* Register */
 
-#section-register h1 {
-    color: blue;
+.container-register h1 {
+    color: black;
     font-size: 40px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -229,6 +266,7 @@ header {
     color: #555;
 }
 
+#section-register input[type="pseudo"],
 #section-register input[type="email"],
 #section-register input[type="password"] {
     padding: 10px;
@@ -240,18 +278,19 @@ header {
 
 #section-register button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: black;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 30%;
+    margin-left: 35%;
     justify-content: center;
 }
 
 #section-register button:hover {
-    background-color: #0056b3;
+    background-color: wheat;
+    color: black;
 }
 
 .lien-login {
@@ -336,7 +375,7 @@ header {
 
 #section-login button {
     padding: 10px;
-    background-color: #007bff;
+    background-color: black;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -347,7 +386,8 @@ header {
 }
 
 #section-login button:hover {
-    background-color: #0056b3;
+    background-color: wheat;
+    color: black;
 }
 
 .lien-login {
@@ -379,4 +419,156 @@ header {
 
 .retour-2 {
     margin-left: 80%;
+}
+
+/* Upadte */
+
+.container-update form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-left: 34%;
+}
+
+.container-update h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.container-update label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.container-update input[type="text"],
+.container-update input[type="date"],
+.container-update input[type="email"],
+.container-update textarea,
+.container-update select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.container-update input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.container-update textarea {
+    resize: vertical;
+}
+
+.container-update button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.container-update button:hover {
+    background-color: gray;
+}
+
+.container-update a {
+    margin-left: 60%;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.container-update a:hover {
+    color: #0056b3;
+}
+
+/* Form */
+
+.container-form form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    margin-left: 34%;
+}
+
+.container-form h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.container-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.container-form input[type="text"],
+.container-form input[type="date"],
+.container-form input[type="email"],
+.container-form textarea,
+.container-form select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+.container-form input[type="checkbox"] {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.container-form textarea {
+    resize: vertical;
+}
+
+.container-form button {
+    background-color: black;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.container-form button:hover {
+    background-color: gray;
+}
+
+.container-form a {
+    margin-left: 60%;
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.container-form a:hover {
+    color: #0056b3;
 }

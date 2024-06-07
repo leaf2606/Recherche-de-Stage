@@ -2,13 +2,6 @@
 
 session_start();
 
-//Problème ici je ne peux plus faire d'inscription //
-
-// if(isset($_SESSION["mdp"])){
-//     header("Location: profil.php");
-//     exit;
-// }
-
 if(!empty($_POST)){
     // var_dump($_POST);
     if(isset($_POST["username"], $_POST["email"], $_POST["password"])
@@ -69,9 +62,9 @@ if(!empty($_POST)){
 <body>
     <div class="container-register">
     <section id="section-register">
-    <div class="titre-1">
+
         <h1>Créér un compte</h1>
-    </div>
+
     <form  method="post">
 
         <label for="username">Pseudo</label>
@@ -82,12 +75,14 @@ if(!empty($_POST)){
 
         <label for="password">Mot de passe</label>
         <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password" required>&ensp;&ensp;
-        <button>Se connecter</button>
+        <button>S'inscrire</button>
     </form>
+    
     </section>
-    <div class="lien">
-        <a href="index.php">Retour</a>
-    </div>
+        
+        <div class="lien">
+            <a href="index.php">Retour</a>
+        </div>
     </div>
 </body>
 </html>

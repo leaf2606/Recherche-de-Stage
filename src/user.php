@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 require_once("connect.php");
@@ -40,9 +41,10 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
     <title>Recherche de stage</title>
 </head>
 <body>
-    <section id="section-user">
-    <h1>Recherche de Stage</h1>
 
+    <h1>Recherche de Stage</h1>
+    <div class="container-user">
+    
         <p>Statut de la recherche : <?= $user["statut_recherche"] ?></p>
         <p>Nom de l'entreprise : <?= $user["nom_entreprise"] ?></p>
         <p>Date de postulation : <?= $user["date_postuler"] ?></p>
@@ -53,9 +55,9 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
         <p>Type decontrat : <?= $user["type_contrat"] ?></p>
         <p>Adresse mail de contact : <?= $user["mail_contact"] ?></p>
         <p>Commentaires : <?= $user["commentaires"] ?></p>
-    <div class="retour">
-        <p><a href="index.php">Retour</a><br>
-    </div>
 
+        <a href="index.php">Retour</a><br>
+
+    </div>
 </body>
 </html>

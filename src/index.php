@@ -20,12 +20,12 @@ $query->execute();
 // On récuper les donnés sous forme de tableau associatif //
 $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
-function checkRelanceDate($date_relance) {
-    $current_date = new DateTime();
-    $relance_date = new DateTime($date_relance);
-    $interval = $current_date->diff($relance_date);
-    return $interval->days > 7 && $current_date > $relance_date;
-}
+// function checkRelanceDate($date_relance) {
+//     $date_postuler = new DateTime();
+//     $date_relance = new DateTime($date_relance);
+//     $interval = $date_postuler->diff($date_relance);
+//     return $interval->days > 7 && $date_postuler > $date_relance;
+// }
 
 ?>
 
@@ -79,10 +79,12 @@ function checkRelanceDate($date_relance) {
         <?php
             $counter = 1; 
             foreach($users as $user) {
-                $isRelanceDue = checkRelanceDate($user["date_relance"]);
+                // $isRelanceDue = checkRelanceDate($user["date_relance"]);
         ?>
 
-            <tr <?php if($isRelanceDue) echo 'style="background-color: #F5DEB3;"'; ?>>
+            <!-- <?php if($isRelanceDue) echo 'style="background-color: #F5DEB3;"'; ?> -->
+
+            <tr>
                 <td><?= $counter++ ?></td>
                 <td><?= $user["statut_recherche"]?></td>
                 <td><?= $user["nom_entreprise"]?></td>
@@ -97,7 +99,7 @@ function checkRelanceDate($date_relance) {
                 
                 <td>   
                 <a href="user.php?id=<?= $user["id"] ?>">Voir</a>
-                <a href="edit.php?id=<?= $user["id"] ?>">Modifier</a>
+                <a href="update.php?id=<?= $user["id"] ?>">Modifier</a>
                 <a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a>
                 </td>                                             
             </tr>

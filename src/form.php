@@ -15,8 +15,11 @@ session_start();
 </head>
 <body>
 
-<form action="create.php" method="post">
+<div class="container-form">
+
 <h1>Ajoutez une entreprise</h1>
+
+<form action="create.php" method="post">
 
     <label id="statut_recherche">Statut de la recherche : </label>
     <select name="statut_recherche" id="statut_recherche" placeholder="Recherche de stage" value="<?= $user["statut_recherche"] ?>" required>
@@ -28,16 +31,17 @@ session_start();
         <option>Embauche</option>
         <option>Pas de réponse</option>
         <option>Relancé</option>
-    </select>&ensp;&ensp;&ensp;
+    </select><br><br>
 
     <label for="nom_entreprise">Nom de l'entreprise :</label>
     <input type="text" name="nom_entreprise" placeholder="Nom de l'entreprise" required><br><br>
 
     <label>Date de postulation :<code></code></label>
-    <input type="date" name="date_postuler" required>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <input type="date" name="date_postuler" required><br><br>
 
-    <label>Date de relance :<code></code></label>
-    <input type="date" name="date_relance" onchange="miseAJour()"> +7 jours<br><br>
+    <label for="date_relance">Date de relance :</label>
+    <input type="date" id="date_relance" name="date_relance" required>
+    <input type="checkbox" id="ajouter_jours" onchange="miseAJour()"> +7 jours<br><br>
 
     <label id="type_postulation">Type de postulation</label>
     <select name="type_postulation" placeholder="Type de postulation" id="type_postulation" value="<?= $user["type_postulation"] ?>" required>
@@ -45,7 +49,7 @@ session_start();
         <option>Réponse à une offre</option>
         <option>Recommandation</option>
         <option>Sollicitation directe</option>
-    </select>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    </select><br><br>
 
     <label id="methode_postulation">Méthode de postulation</label>
     <select name="methode_postulation" placeholder="Méthode de postulation" id="methode_postulation" value="<?= $user["methode_postulation"] ?>" required>
@@ -59,7 +63,7 @@ session_start();
     </select><br><br>
 
     <label for="intitule_poste">Intitulé du poste</label>
-    <input type="text" name="intitule_poste" placeholder="Intitulé du poste" required>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <input type="text" name="intitule_poste" placeholder="Intitulé du poste" required><br><br>
 
     <label id="type_contrat">Type de contrat</label>
     <select name="type_contrat" placeholder="Type de contrat" id="type_contrat" value="<?= $user["type_contrat"] ?>" required>
@@ -71,7 +75,7 @@ session_start();
     </select><br><br>
 
     <label for="mail">E-mail :</label>
-    <input type="email" id="mail" placeholder="E-mail" name="mail_contact">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <input type="email" id="mail" placeholder="E-mail" name="mail_contact"><br><br>
 
     <label for="commentaires">Commentaires :</label>
     <textarea name="commentaires" placeholder="Commentaires" id="commentaires"></textarea><br><br>
@@ -82,5 +86,7 @@ session_start();
         <a href="index.php" class="button">Retour</a>
 
     </form>
+
+</div>    
 </body>
 </html>

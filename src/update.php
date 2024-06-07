@@ -84,7 +84,7 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
     if(!$user){
         header("Location: index.php");
     } else {
-        require_once("disconnect.php");
+        // require_once("disconnect.php");
     }
     
     // print_r($user);
@@ -104,6 +104,9 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
     <title>Formulaire</title>
 </head>
 <body>
+
+<div class="container-update">
+
 <h1>Modifier</h1>
     <form method="post">
     <input type="hidden" name="id" value="<?= $user["id"] ?>">
@@ -121,7 +124,7 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
             </select><br><br>
         
         <label for="nom_entreprise">Nom de l'entreprise</label>
-        <input type="text" name="nom_entreprise" required><br><br>
+        <input type="text" name="nom_entreprise" placeholder="Nom de l'entreprise" required><br><br>
         
         <label>Date de postulation <code></code></label>
         <input type="date" name="date_postuler" required><br><br>
@@ -150,7 +153,7 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
         </select><br><br>
         
         <label for="intitule_poste">Intitulé du poste</label>
-        <input type="text" name="intitule_poste" required><br><br>
+        <input type="text" name="intitule_poste" placeholder="Intitulé du poste" required><br><br>
         
         <label id="type_contrat">Type de postulation:</label>
         <select name="type_contrat" id="type_contrat" value="<?= $user["type_contrat"] ?>" required>
@@ -162,18 +165,20 @@ if(isset($_GET{"id"}) && !empty($_GET{"id"})) {
         </select><br><br>
         
         <label for="mail">Adresse mail de contact</label>
-        <input type="email" id="mail" name="mail_contact"><br><br>
+        <input type="email" id="mail" name="mail_contact" placeholder="E-mail"><br><br>
         
         <label for="commentaires">Commentaires:</label>
-        <textarea name="commentaires" id="commentaires"></textarea><br><br>
+        <textarea name="commentaires" id="commentaires" placeholder="Commentaires"></textarea><br><br>
         
         <button>Ajouter</button>
+        <a href="index.php">Retour</a>
     </form>
-    <a href="index.php">Retour</a>
+    
 
     <?php
     // print_r($_POST);
     ?>
 
+</div>
 </body>
 </html>

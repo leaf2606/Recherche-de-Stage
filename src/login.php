@@ -74,7 +74,7 @@ if(!empty($_POST)){
     </section>
     <div class="lien-login">
         <!-- <a href="index.php">Retour</a> -->
-        <a href="register.php">Inscrivez-vous ici</a>
+        <a href="register.php">Inscription</a>
     </div>
     </div>
 </body>
