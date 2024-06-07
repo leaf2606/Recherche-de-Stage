@@ -20,13 +20,6 @@ $query->execute();
 // On récuper les donnés sous forme de tableau associatif //
 $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// function checkRelanceDate($date_relance) {
-//     $date_postuler = new DateTime();
-//     $date_relance = new DateTime($date_relance);
-//     $interval = $date_postuler->diff($date_relance);
-//     return $interval->days > 7 && $date_postuler > $date_relance;
-// }
-
 ?>
 
 <!DOCTYPE html>
@@ -79,10 +72,8 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
         <?php
             $counter = 1; 
             foreach($users as $user) {
-                // $isRelanceDue = checkRelanceDate($user["date_relance"]);
-        ?>
 
-            <!-- <?php if($isRelanceDue) echo 'style="background-color: #F5DEB3;"'; ?> -->
+        ?>
 
             <tr>
                 <td><?= $counter++ ?></td>
