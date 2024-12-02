@@ -24,22 +24,24 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Atelier-stage</title>
+    <title>Recherche de stage</title>
 </head>
+
 <body>
 
     <nav>
         <ul class="navigation">
-                <li><a href="register.php">Inscription</a></li>
-                <li><a href="index.php">Accueil</a></li>
+            <li><a href="register.php">Inscription</a></li>
+            <li><a href="index.php">Accueil</a></li>
             <?php if(!isset($_SESSION["user_id"])): ?>
-                <li><a href="login.php">Connexion</a></li>
+            <li><a href="login.php">Connexion</a></li>
             <?php else: ?>
-                <li><a href="disconnect.php">Deconnexion</a></li>
+            <li><a href="disconnect.php">Deconnexion</a></li>
             <?php endif; ?>
         </ul>
     </nav>
@@ -55,7 +57,7 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
 
     <table>
         <thead>
-            <td>id</td> 
+            <td>id</td>
             <td>Statut de la Recherche</td>
             <td>Nom de l'entreprise</td>
             <td>Date de postulation</td>
@@ -67,9 +69,9 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
             <td>Adresse-mail de contact</td>
             <td>Commentaires</td>
         </thead>
-    
-    <tbody>
-        <?php
+
+        <tbody>
+            <?php
             $counter = 1; 
             foreach($users as $user) {
 
@@ -86,22 +88,23 @@ $users = $query->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $user["intitule_poste"]?></td>
                 <td><?= $user["type_contrat"]?></td>
                 <td><?= $user["mail_contact"]?></td>
-                <td><?= $user["commentaires"]?></td>  
-                
-                <td>   
-                <a href="user.php?id=<?= $user["id"] ?>">Voir</a>
-                <a href="update.php?id=<?= $user["id"] ?>">Modifier</a>
-                <a href="delete.php?id=<?= $user["id"] ?>">Supprimer</a>
-                </td>                                             
+                <td><?= $user["commentaires"]?></td>
+
+                <td>
+                    <a href="user.php?id=<?= $user["user_id"] ?>">Voir</a>
+                    <a href="update.php?id=<?= $user["user_id"] ?>">Modifier</a>
+                    <a href="delete.php?id=<?= $user["user_id"] ?>">Supprimer</a>
+                </td>
             </tr>
-        
-        <?php
+
+            <?php
            }
         ?>
             <div class="ajoutez">
-           <a href="form.php"><button>Ajoutez une entreprise</button></a>
-           </div>
-    </tbody>
+                <a href="form.php"><button>Ajoutez une entreprise</button></a>
+            </div>
+        </tbody>
     </table>
 </body>
+
 </html>

@@ -9,8 +9,8 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-if(isset($_GET["id"]) && !empty($_GET["id"])) {
-    $id = strip_tags($_GET["id"]);
+if(isset($_GET["user_id"]) && !empty($_GET["user_id"])) {
+    $id = strip_tags($_GET["user_id"]);
 
     $sql = "SELECT * FROM users WHERE id = :id";
 
@@ -33,6 +33,7 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,11 +41,12 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
     <title>Recherche de stage</title>
 </head>
+
 <body>
 
     <h1>Recherche de Stage</h1>
     <div class="container-user">
-    
+
         <p>Statut de la recherche : <?= $user["statut_recherche"] ?></p>
         <p>Nom de l'entreprise : <?= $user["nom_entreprise"] ?></p>
         <p>Date de postulation : <?= $user["date_postuler"] ?></p>
@@ -60,4 +62,5 @@ if(isset($_GET["id"]) && !empty($_GET["id"])) {
 
     </div>
 </body>
+
 </html>

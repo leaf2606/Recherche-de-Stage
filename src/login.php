@@ -26,9 +26,9 @@ if(!empty($_POST)){
                 die("L'utilisateur et/ou le mot de passe est incorrect");
             }
         
-            if (!password_verify($_POST["password"], $mdp["password"])){
-                die("L'utilisateur et/ou le mot de passe est incorrect");
-            }
+            // if (!password_verify($_POST["password"], $mdp["password"])){
+            //     die("L'utilisateur et/ou le mot de passe est incorrect");
+            // }
                 
         }
 
@@ -50,6 +50,7 @@ if(!empty($_POST)){
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,26 +58,28 @@ if(!empty($_POST)){
 
     <title>Inscription</title>
 </head>
+
 <body>
     <div class="container-login">
-    <section id="section-login">
-    <h1>Connectez-vous à votre compte</h1>
+        <section id="section-login">
+            <h1>Connectez-vous à votre compte</h1>
 
-    <form  method="post">
+            <form method="post">
 
-        <label for="email">E-mail</label>
-        <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>
+                <label for="email">E-mail</label>
+                <input type="email" placeholder="Entrez votre e-mail" id="email" name="email"><br><br>
 
-        <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password" required>&ensp;&ensp;
-        <button>Se connecter</button>
-    </form>
-    </section>
-    <div class="lien-login">
-        <!-- <a href="index.php">Retour</a> -->
-        <a href="register.php">Inscription</a>
-    </div>
+                <label for="password">Mot de passe</label>
+                <input type="password" placeholder="Entrez votre Mot de passe" id="password" name="password"
+                    required>&ensp;&ensp;
+                <button>Se connecter</button>
+            </form>
+        </section>
+        <div class="lien-login">
+            <!-- <a href="index.php">Retour</a> -->
+            <a href="register.php">Inscription</a>
+        </div>
     </div>
 </body>
-</html>
 
+</html>

@@ -1,449 +1,451 @@
 /* Index */
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Arial Narrow', Arial, sans-serif;
-    color: black;  
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif, "Arial Narrow",
+    Arial, sans-serif;
+  color: black;
 }
 
 h1 {
-    color:black;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .ajoutez {
-    padding: 10px;
-    margin-right: 70%;
+  padding: 10px;
+  margin-right: 70%;
 }
 
 .modifier {
-    margin-right: 98%;
+  margin-right: 98%;
 }
 
 .supprimer {
-    margin-right: 98%;
+  margin-right: 98%;
 }
 
 table {
-    border-collapse: collapse; 
-    text-align: center;
+  border-collapse: collapse;
+  text-align: center;
 }
-  
-th, td {
-    padding: 10px; 
-    border: solid 2px black;
+
+th,
+td {
+  padding: 10px;
+  border: solid 2px black;
 }
 
 thead {
-    color: brown;
-    font-weight: 700;
-}
-   
-tr {
-    margin-bottom: 10px;   
+  color: brown;
+  font-weight: 700;
 }
 
-button {  
-    font-family: poppins, bold, sans-serif;
-    background-color: white;
-    color: black;
-    border: none;
-    padding: 1em 2em;
-    border-radius: 15px; 
-    width: fit-content;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+tr {
+  margin-bottom: 10px;
+}
+
+button {
+  font-family: poppins, bold, sans-serif;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 1em 2em;
+  border-radius: 15px;
+  width: fit-content;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
 }
 
 button:hover {
-    border: none;
-    cursor: pointer;
-    opacity: 0.9;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 a {
-    margin: 10%;
+  margin: 10%;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
-table th, table td {
-    padding: 10px;
-    border: 1px solid black;
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid black;
 }
 table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
 table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: #f9f9f9;
 }
 table tbody tr:hover {
-    background-color: #e9e9e9;
+  background-color: #e9e9e9;
 }
 
 .ajoutez {
-    text-align: right;
-    margin-top: 20px;
+  text-align: right;
+  margin-top: 20px;
 }
 .ajoutez button {
-    background-color: gray;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  background-color: gray;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 .ajoutez button:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 /* User */
 
 .container-user {
-    background-color: wheat;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    margin-left: 34%;
+  background-color: wheat;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin-left: 34%;
 }
 
 .container-user p {
-    font-size: 20px;
-    color: black;
+  font-size: 20px;
+  color: black;
 }
 
 .container-user h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 .container-user button {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .container-user button:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .container-user a {
-    margin-left: 60%;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s;
+  margin-left: 60%;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
 }
 
 .container-user a:hover {
-    color: #0056b3;
-} 
+  color: #0056b3;
+}
 
 /* Nav Index */
 
 .navigation {
-    display: flex;
-    gap: 640px;
-    text-align: center;
-    background-color: aliceblue;
+  display: flex;
+  gap: 640px;
+  text-align: center;
+  background-color: aliceblue;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 a:hover {
-    /* text-decoration: underline; */
-    cursor: pointer; 
-     opacity: 0.9;
+  /* text-decoration: underline; */
+  cursor: pointer;
+  opacity: 0.9;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 100px;
-    background-color:gray;
-    position: sticky;
-    top: 0;
-    border:  solid 3px reds;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 100px;
+  background-color: gray;
+  position: sticky;
+  top: 0;
+  border: solid 3px reds;
 }
 
 .navigation {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    background-color: wheat;
-    overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: wheat;
+  overflow: hidden;
 }
 .navigation li {
-    float: left;
+  float: left;
 }
 .navigation li a {
-    display: block;
-    color: black;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 .navigation li a:hover {
-    background-color: white;
+  background-color: white;
 }
 
 /* Register */
 
 .container-register h1 {
-    color: black;
-    font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #section-register form {
-    text-align: center;
-    font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .lien a {
-    margin-left: 80%;
+  margin-left: 80%;
 }
 
 #section-register body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 .container-register {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #section-register {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
 #section-register h1 {
-    text-align: center;
-    font-size: x-large;
-    margin-bottom: 20px;
-    color: #333;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 #section-register form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #section-register label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-#section-register input[type="pseudo"],
+#section-register input[type="username"],
 #section-register input[type="email"],
 #section-register input[type="password"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
 }
 
 #section-register button {
-    padding: 10px;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 35%;
-    justify-content: center;
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 35%;
+  justify-content: center;
 }
 
 #section-register button:hover {
-    background-color: wheat;
-    color: black;
+  background-color: wheat;
+  color: black;
 }
 
 .lien-login {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .lien-login a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .lien-login a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Login */
 
 #section-login h1 {
-    color: blue;
-    font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: blue;
+  font-size: 40px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #section-login form {
-    text-align: center;
-    font-size: 20px;
+  text-align: center;
+  font-size: 20px;
 }
 
 .lien-login a {
-    margin-left: 80%;
+  margin-left: 80%;
 }
 
 #section-login body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
 .container-login {
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 #section-login {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
 }
 
 #section-login h1 {
-    text-align: center;
-    font-size: x-large;
-    margin-bottom: 30px;
-    color: #333;
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 #section-login form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #section-login label {
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 #section-login input[type="email"],
 #section-login input[type="password"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-size: 16px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 16px;
 }
 
 #section-login button {
-    padding: 10px;
-    background-color: black;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-left: 30%;
-    justify-content: center;
+  padding: 10px;
+  background-color: black;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 30%;
+  justify-content: center;
 }
 
 #section-login button:hover {
-    background-color: wheat;
-    color: black;
+  background-color: wheat;
+  color: black;
 }
 
 .lien-login {
-    text-align: center;
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .lien-login a {
-    color: #007bff;
-    text-decoration: none;
+  color: #007bff;
+  text-decoration: none;
 }
 
 .lien-login a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Profil */
 
-#section-profil h1{
-    text-align: center;
-    color: black;
-    font-size: 40px;
+#section-profil h1 {
+  text-align: center;
+  color: black;
+  font-size: 40px;
 }
 
 #section-profil p {
-    font-size: 20px;
-    text-align: center;
+  font-size: 20px;
+  text-align: center;
 }
 
 .retour-2 {
-    margin-left: 80%;
+  margin-left: 80%;
 }
 
 /* Upadte */
 
 .container-update form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    margin-left: 34%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  margin-left: 34%;
 }
 
 .container-update h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 .container-update label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .container-update input[type="text"],
@@ -451,75 +453,75 @@ header {
 .container-update input[type="email"],
 .container-update textarea,
 .container-update select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .container-update input[type="checkbox"] {
-    margin-left: 10px;
-    margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .container-update textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .container-update button {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .container-update button:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .container-update a {
-    margin-left: 60%;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s;
+  margin-left: 60%;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
 }
 
 .container-update a:hover {
-    color: #0056b3;
+  color: #0056b3;
 }
 
 /* Form */
 
 .container-form form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 100%;
-    text-align: center;
-    margin-left: 34%;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  margin-left: 34%;
 }
 
 .container-form h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
 .container-form label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
 }
 
 .container-form input[type="text"],
@@ -527,48 +529,48 @@ header {
 .container-form input[type="email"],
 .container-form textarea,
 .container-form select {
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 14px;
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
 }
 
 .container-form input[type="checkbox"] {
-    margin-left: 10px;
-    margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .container-form textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 .container-form button {
-    background-color: black;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+  background-color: black;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
 .container-form button:hover {
-    background-color: gray;
+  background-color: gray;
 }
 
 .container-form a {
-    margin-left: 60%;
-    display: inline-block;
-    margin-top: 20px;
-    text-decoration: none;
-    color: #007bff;
-    transition: color 0.3s;
+  margin-left: 60%;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #007bff;
+  transition: color 0.3s;
 }
 
 .container-form a:hover {
-    color: #0056b3;
+  color: #0056b3;
 }

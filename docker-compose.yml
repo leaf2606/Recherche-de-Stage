@@ -3,7 +3,7 @@ services:
     image: php:8.3-apache
     container_name: Recherche-stage_php8_3
     ports:
-      - "8008:80" # on définit le port pour accéder à l'application (localhost:8004)
+      - "8011:80" # on définit le port pour accéder à l'application (localhost:8004)
     volumes:
       - ./src:/var/www/html # on monte le dossier courant dans le dossier /var/www/html du container
     build:
@@ -19,7 +19,7 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: test
     ports:
-      - "3309:3306"
+      - "3312:3312"
   phpma:
     image: phpmyadmin/phpmyadmin
     container_name: Recherche-stage_phpmyadmin
@@ -30,4 +30,4 @@ services:
       PMA_PASSWORD: root
       UPLOAD_LIMIT: 20M
     ports:
-      - "8088:80" # on définit le port pour accéder à phpmyadmin (localhost:8084)
+      - "8091:80" # on définit le port pour accéder à phpmyadmin (localhost:8084)
